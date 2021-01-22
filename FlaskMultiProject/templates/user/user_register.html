@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% include 'banner.html' %}
+{% endblock %}
+
+{% block content %}
+    <h2>这是用户注册的内容</h2>
+    {% macro hello() %}
+        <h3>这是一个marco</h3>
+    {% endmacro %}
+    {{ hello() }}
+    {{ hello() }}
+    {{ hello() }}
+    {{ hello() }}
+    <hr>
+    {% from 'html_functions.html' import hehe %}
+    {{ hehe('tom') }}
+    {{ hehe('rock') }}
+    <hr>
+    {% from 'html_functions.html' import goods %}
+    {{ goods() }}
+    {{ goods() }}
+    {{ goods() }}
+    <hr>
+    {% for user in users %}
+        {% if loop.first %}
+            <li style="color: gold">{{ loop.index }}:{{ loop.index0 }}:{{ user }}</li>
+        {% elif loop.last %}
+            <li style="color: gray">{{ loop.index }}:{{ loop.index0 }}:{{ user }}</li>
+        {% else %}
+            <li style="color: green">{{ loop.index }}:{{ loop.index0 }}:{{ user }}</li>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
