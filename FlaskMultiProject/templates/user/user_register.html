@@ -33,5 +33,13 @@
         {% endif %}
 
     {% endfor %}
+    <hr>
+    <h1>{{ msg | capitalize }}</h1>
+    <h1>{{ msg | lower }}</h1>
+    <h1>{{ msg | upper }}</h1>
+    <h1>{{ msg | title }}</h1>
+    <h1>{{ msg | trim }}</h1>
+    <h1>{{ msg | reverse }}</h1>
+    <h1>{{ msg | format }}</h1>
 
 {% endblock %}

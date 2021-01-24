@@ -101,4 +101,4 @@ def students():
 @user_blue.route('/user_register/')
 def user_register():
     users = [f'小白{i}' for i in range(10)]
-    return render_template('user/user_register.html', title='用户注册', users=users)
+    return render_template('user/user_register.html', title='用户注册', users=users, msg='lajos is a handsome boy')
