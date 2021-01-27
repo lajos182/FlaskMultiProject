@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddressList</title>
+</head>
+<body>
+    <ul>
+        {% for addr in addresses %}
+            <li>{{ addr.id }}---{{ addr.position }}</li>
+        {% endfor %}
+
+    </ul>
+</body>
+</html>

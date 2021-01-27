@@ -1,7 +1,7 @@
-
 from .user import user_blue
 from .goods import goods_blue
 from .index import index_blue
+from .news import news_blue
 
 # 专门配置蓝本，减少代码的重复度
 DEFAULT_BLUEPRINT = {
@@ -9,6 +9,7 @@ DEFAULT_BLUEPRINT = {
     (index_blue, ''),
     (user_blue, '/user'),
     (goods_blue, '/goods'),
+    (news_blue, '/news'),
 }
 def init_view(app):
     for blueprint, url_prefix in DEFAULT_BLUEPRINT:

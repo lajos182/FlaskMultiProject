@@ -8,6 +8,7 @@ from .settings import envs
 
 def create_app(env):
     app = Flask(__name__)
+
     # 加载settings中的配置
     app.config.from_object(envs.get(env))
     # 加载扩展库

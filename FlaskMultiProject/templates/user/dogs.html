@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block ext_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user/user.css') }}">
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for dog in dogs %}
+            <li>{{ dog.id }}---{{ dog.name }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        {% for dog in pagination.items %}
+            <li>{{ dog.id }}---{{ dog.name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block footer %}
+    <div class=pagination>
+        {%- for page in pagination.iter_pages() %}
+            {% if page %}
+                {% if page != pagination.page %}
+                    <a href="{{ url_for('user_blue.get_dogs_with_page') }}?page={{ page }}&size={{ size }}">{{ page }}</a>
+                {% else %}
+                    <strong>{{ page }}</strong>
+                {% endif %}
+            {% else %}
+                <span class=ellipsis>…</span>
+            {% endif %}
+        {%- endfor %}
+    </div>
+{% endblock %}

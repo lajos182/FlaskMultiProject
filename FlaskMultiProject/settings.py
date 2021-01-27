@@ -34,15 +34,22 @@ class Config:
     SESSION_REDIS = Redis(host='127.0.0.1', port=6379, db=1, password=None)
     # SESSION_FILE_THRESHOLD： session最大缓存条数，默认500
 
+    # 邮箱配置
+    MAIL_SERVER = 'smtp.163.com'
+    MAIL_PORT = 25
+    MAIL_USERNAME = ''
+    MAIL_PASSWORD = ''
+    MAIL_DEFAULT_SENDER = ''
+
 class DevelopConfig(Config):
     DEBUG = True
     dbinfo = {
-        'ENGINE': 'sqlite',
-        'DRIVER': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'mysql',
+        'DRIVER': 'pymysql',
+        'USER': 'root',
+        'PASSWORD': 'jiang',
+        'HOST': 'localhost',
+        'PORT': 3306,
         'NAME': 'GPIFlask'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
